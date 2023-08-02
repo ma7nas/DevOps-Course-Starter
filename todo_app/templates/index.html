@@ -11,15 +11,16 @@
     <form method="POST">
             {% for item in items %}
               {% if item.status == 'Done' %}
-                <input type="checkbox" id="done" name="done" value={{item.id}} disabled class="form-check-input">
-                <label for="done" class="form-check-label"> {{item.title}}</label> 
+                <input type="checkbox" id="action" name="action" value={{item.id}} class="form-check-input">
+                <label for="action" class="form-check-label">{{item.title}}</label> 
                 <span class="badge bg-primary rounded-pill">DONE</span><br>
               {% else %}
-                <input type="checkbox" id="done" name="done" value={{item.id}} class="form-check-input">
-                <label for="done" style="color:black" class="form-check-label"> {{item.title}}</label><br>
+                <input type="checkbox" id="action" name="action" value={{item.id}} class="form-check-input">
+                <label for="action" style="color:black" class="form-check-label"> {{item.title}}</label><br>
               {% endif %}
             {% endfor %}
-      <button name="done" class="btn btn-primary mb-3">Done</button>
+      <button name="action" class="btn btn-primary mb-3" formaction="/done" formmethod="POST">Done</button>
+      <button name="action" class="btn btn-primary mb-3" formaction="/delete" formmethod="POST">Delete</button>
     </form>
   <h3>Add Item</h3>
     <form class="row g-3" method="POST">
@@ -30,7 +31,7 @@
         <input type="text" id="title" name="title" required min="1" class="form-control">
       </div>
       <div class="col-auto">
-        <button name="addItem" class="btn btn-primary mb-3">Add</button>
+        <button name="add" class="btn btn-primary mb-3" formaction="/add" formmethod="POST">Add</button>
       </div>
     </form>
 
