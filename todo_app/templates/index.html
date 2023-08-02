@@ -7,27 +7,31 @@
     <p class="lead">Just another to-do app.</p>
   </div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <h2>Items</h2>
-        <form method="POST">
-          {% for item in items %}
-            {% if item.status == 'Done' %}
-              <input type="checkbox" id="done" name="done" value={{item.id}}>
-              <label for="done" style="color:red"> {{item.title}}</label><br>
-            {% else %}
-              <input type="checkbox" id="done" name="done" value={{item.id}}>
-              <label for="done"> {{item.title}}</label><br>
-            {% endif %}
-          {% endfor %}
-          <button name="done">Done</button>
-        </form>
-      <h3>Add Item</h3>
-        <form method="POST">
-          <label for="title">Title:</label>
-          <input type="text" id="title" name="title" required min="1">
-          <button name="addItem">Add</button>
-        </form>
-    </div>
-  </div>
+  <h2>Items</h2>
+    <form method="POST">
+            {% for item in items %}
+              {% if item.status == 'Done' %}
+                <input type="checkbox" id="done" name="done" value={{item.id}} disabled class="form-check-input">
+                <label for="done" class="form-check-label"> {{item.title}}</label> 
+                <span class="badge bg-primary rounded-pill">DONE</span><br>
+              {% else %}
+                <input type="checkbox" id="done" name="done" value={{item.id}} class="form-check-input">
+                <label for="done" style="color:black" class="form-check-label"> {{item.title}}</label><br>
+              {% endif %}
+            {% endfor %}
+      <button name="done" class="btn btn-primary mb-3">Done</button>
+    </form>
+  <h3>Add Item</h3>
+    <form class="row g-3" method="POST">
+      <div class="col-auto">
+        <label for="title" class="form-label">Title:</label>
+      </div>
+      <div class="col-auto">
+        <input type="text" id="title" name="title" required min="1" class="form-control">
+      </div>
+      <div class="col-auto">
+        <button name="addItem" class="btn btn-primary mb-3">Add</button>
+      </div>
+    </form>
+
 {% endblock %}
