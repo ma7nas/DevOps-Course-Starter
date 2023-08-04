@@ -3,29 +3,30 @@
 
 {% block content %}
   <div class="jumbotron">
-    <h1 class="display-4">To-Do App</h1>
-    <p class="lead">Just another to-do app.</p>
+    <h1 class="display-4">TASKMASTER</h1>
+    <p class="lead">All the information is on the task!</p>
   </div>
 
-  <h2>Items</h2>
+  <h2>My Tasks</h2>
     <form method="POST">
             {% for item in items %}
               {% if item.status == 'Done' %}
                 <input type="checkbox" id="action" name="action" value={{item.id}} class="form-check-input">
-                <label for="action" class="form-check-label">{{item.title}}</label> 
+                <label for="action" style="color:grey" class="form-check-label">{{item.title}}</label> 
                 <span class="badge bg-primary rounded-pill">DONE</span><br>
               {% else %}
                 <input type="checkbox" id="action" name="action" value={{item.id}} class="form-check-input">
                 <label for="action" style="color:black" class="form-check-label"> {{item.title}}</label><br>
               {% endif %}
             {% endfor %}
+            <br>
       <button name="action" class="btn btn-primary mb-3" formaction="/done" formmethod="POST">Done</button>
       <button name="action" class="btn btn-primary mb-3" formaction="/delete" formmethod="POST">Delete</button>
     </form>
-  <h3>Add Item</h3>
+  <h3>New Task</h3>
     <form class="row g-3" method="POST">
       <div class="col-auto">
-        <label for="title" class="form-label">Title:</label>
+        <label for="title" class="form-label">Task:</label>
       </div>
       <div class="col-auto">
         <input type="text" id="title" name="title" required min="1" class="form-control">
