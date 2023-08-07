@@ -21,7 +21,7 @@ def add():
 @app.route('/done', methods=(['POST']))
 def done():
     done_items = request.form.getlist('action')
-    for item in done_items[0:-1]:
+    for item in done_items:
             updated_item = get_item(item)
             updated_item.update({"status": "Done"})
             save_item(updated_item)
@@ -30,6 +30,6 @@ def done():
 @app.route('/delete', methods=(['POST']))
 def delete():
     delete_items = request.form.getlist('action')
-    for item in delete_items[0:-1]:
+    for item in delete_items:
         delete_item(item)
     return redirect(url_for('index'))

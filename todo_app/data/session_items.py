@@ -78,9 +78,9 @@ def delete_item(item):
     """
     existing_items = get_items()
 
-    for existing_item in range(len(existing_items)):
-      if str(existing_items[existing_item]['id']) == item:
-          del existing_items[existing_item] 
+    for index, existing_item in enumerate(existing_items):
+      if str(existing_item['id']) == item:
+          del existing_items[index] 
           break
     session['items'] = existing_items
     return item
