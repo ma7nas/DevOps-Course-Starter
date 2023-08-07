@@ -52,3 +52,7 @@ You should see output similar to the following:
  * Debugger PIN: 226-556-590
 ```
 Now visit [`http://localhost:5000/`](http://localhost:5000/) in your web browser to view the app.
+
+You can add a new to-do item by entering the task in the text box and clicking the Add button.
+You can mark an item as Done by selecting the relevant checkbox and clicking the Done button. You can select multiple items at once. Completed items will move to the bottom of the task list.
+You can delete an item from the list completely by selecting the relevant checkbox and clicking the Delete button. You can select multiple items at once.

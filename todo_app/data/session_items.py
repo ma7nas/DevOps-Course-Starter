@@ -1,8 +1,8 @@
 from flask import session
 
 _DEFAULT_ITEMS = [
-    { 'id': 1, 'status': 'Not Started', 'title': 'List saved todo items' },
-    { 'id': 2, 'status': 'Not Started', 'title': 'Allow new items to be added' }
+    { 'id': 1, 'status': 'Not Started', 'title': 'Write a song for a stranger' },
+    { 'id': 2, 'status': 'Not Started', 'title': 'Make an exotic sandwich' }
 ]
 
 
@@ -66,4 +66,21 @@ def save_item(item):
 
     session['items'] = updated_items
 
+    return item
+
+
+def delete_item(item):
+    """
+    Deletes an existing item in the session. If no existing item matches the ID of the specified item, nothing is deleted.
+
+    Args:
+        item: The item to delete.
+    """
+    existing_items = get_items()
+
+    for index, existing_item in enumerate(existing_items):
+      if str(existing_item['id']) == item:
+          del existing_items[index] 
+          break
+    session['items'] = existing_items
     return item
