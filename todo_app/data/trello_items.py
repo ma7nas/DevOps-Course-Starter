@@ -33,7 +33,7 @@ def get_card(id):
         card: The saved card, or None if no cards match the specified ID.
     """
     cards = get_cards()
-    return next((card for card in cards if card['id'] == int(id)), None)
+    return next((card for card in cards if card['id'] == id), None)
 
 
 def add_card(title):
@@ -48,16 +48,16 @@ def add_card(title):
     """
     cards = get_cards()
 
-    # Determine the ID for the item based on that of the previously added item
-    id = cards[-1]['id'] + 1 if cards else 0
+    trello_params = {'key': {myAPIKey}, 'token': {myToken}, 'cards': 'open', 'card_fields': 'name'}
+    trello_lists = requests.get(f'https://api.trello.com/1/boards/{boardID}/lists', params=trello_params).json()
+    for trello_list in trello_lists:
+        list_name = trello_list.get("name")
+        if list_name == 'To Do':
+            to_do_list_id = trello_list.get("id")
+            trello_card_data = {'key': {myAPIKey}, 'token': {myToken}, 'name': {title}, 'idList': {to_do_list_id}}
+            new_card = requests.post(f'https://api.trello.com/1/cards', data=trello_card_data).json()
 
-    card = { 'id': id, 'title': title, 'status': 'Not Started' }
-
-    # Add the item to the list
-    cards.append(card)
-    session['items'] = cards
-
-    return card
+    return get_card(new_card["id"])
 
 def save_card(card):
     """
