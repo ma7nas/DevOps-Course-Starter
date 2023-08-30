@@ -46,8 +46,6 @@ def add_card(title):
     Returns:
         card: The saved card.
     """
-    cards = get_cards()
-
     trello_params = {'key': {myAPIKey}, 'token': {myToken}, 'cards': 'open', 'card_fields': 'name'}
     trello_lists = requests.get(f'https://api.trello.com/1/boards/{boardID}/lists', params=trello_params).json()
     for trello_list in trello_lists:
@@ -59,19 +57,23 @@ def add_card(title):
 
     return get_card(new_card["id"])
 
-def save_card(card):
+def update_as_done(card):
     """
-    Updates an existing card in Trello. If no existing card matches the ID of the specified card, nothing is saved.
+    Updates an existing card in Trello to Done. If no existing card matches the ID of the specified card, nothing is changed.
 
     Args:
-        card: The card to save.
+        card: The card to update to Done.
     """
-    existing_cards = get_cards()
-    updated_cards = [card if card['id'] == existing_card['id'] else existing_card for existing_card in existing_cards]
+    trello_params = {'key': {myAPIKey}, 'token': {myToken}, 'cards': 'open', 'card_fields': 'name'}
+    trello_lists = requests.get(f'https://api.trello.com/1/boards/{boardID}/lists', params=trello_params).json()
+    for trello_list in trello_lists:
+        list_name = trello_list.get("name")
+        if list_name == 'Done':
+            done_list_id = trello_list.get("id")
+            trello_card_data = {'key': {myAPIKey}, 'token': {myToken}, 'idList': {done_list_id}}
+            done_card = requests.put(f'https://api.trello.com/1/cards/{card}', data=trello_card_data).json()
 
-    session['items'] = updated_cards
-
-    return card
+    return done_card
 
 def delete_card(card):
     """

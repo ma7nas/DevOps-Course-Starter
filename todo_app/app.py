@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
-from todo_app.data.session_items import add_item, get_item, save_item, delete_item
-from todo_app.data.trello_items import get_cards, add_card
+from todo_app.data.session_items import delete_item
+from todo_app.data.trello_items import get_cards, add_card, update_as_done
 
 from todo_app.flask_config import Config
 
@@ -19,13 +19,11 @@ def add():
     add_card(title)
     return redirect(url_for('index'))
 
-@app.route('/done', methods=['POST'])
+@app.route('/done', methods=['GET', 'POST'])
 def done():
-    done_items = request.form.getlist('action')
-    for item in done_items:
-            updated_item = get_item(item)
-            updated_item.update({"status": "Done"})
-            save_item(updated_item)
+    done_card_ids = request.form.getlist('action')
+    for card_id in done_card_ids:
+        update_as_done(card_id)
     return redirect(url_for('index'))
 
 @app.route('/delete', methods=(['POST']))
