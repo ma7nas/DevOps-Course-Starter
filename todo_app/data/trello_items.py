@@ -77,16 +77,12 @@ def update_as_done(card):
 
 def delete_card(card):
     """
-    Deletes an existing card in the session. If no existing card matches the ID of the specified card, nothing is deleted.
+    Deletes an existing card in Trello. If no existing card matches the ID of the specified card, nothing is deleted.
 
     Args:
         card: The card to delete.
     """
-    existing_cards = get_cards()
+    trello_card_data = {'key': {myAPIKey}, 'token': {myToken}}
+    deleted_card = requests.delete(f'https://api.trello.com/1/cards/{card}', data=trello_card_data).json()
 
-    for index, existing_card in enumerate(existing_cards):
-      if str(existing_card['id']) == card:
-          del existing_cards[index] 
-          break
-    session['items'] = existing_cards
-    return card
+    return deleted_card
