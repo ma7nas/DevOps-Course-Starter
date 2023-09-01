@@ -9,14 +9,14 @@
 
   <h2>My Tasks</h2>
     <form method="POST">
-            {% for card in cards %}
-              {% if card.status == 'Done' %}
-                <input type="checkbox" id="action" name="action" value={{card.id}} class="form-check-input">
-                <label for="action" style="color:grey" class="form-check-label">{{card.name}}</label> 
+            {% for item in items %}
+              {% if item.status == 'Done' %}
+                <input type="checkbox" id="action" name="action" value={{item.id}} class="form-check-input">
+                <label for="action" style="color:grey" class="form-check-label">{{item.name}}</label> 
                 <span class="badge bg-primary rounded-pill">DONE</span><br>
               {% else %}
-                <input type="checkbox" id="action" name="action" value={{card.id}} class="form-check-input">
-                <label for="action" style="color:black" class="form-check-label">{{card.name}}</label><br>
+                <input type="checkbox" id="action" name="action" value={{item.id}} class="form-check-input">
+                <label for="action" style="color:black" class="form-check-label">{{item.name}}</label><br>
               {% endif %}
             {% endfor %}
             <br>
