@@ -9,8 +9,8 @@ app.config.from_object(Config())
 
 @app.route('/')
 def index():
-    sorted_cards = sorted(get_cards(), key=lambda x: x['status'], reverse=True)
-    return render_template('index.html', cards=sorted_cards)
+    items = get_cards()
+    return render_template('index.html', cards=items)
 
 @app.route('/add', methods=['GET', 'POST'])
 def add():

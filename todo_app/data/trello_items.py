@@ -1,8 +1,11 @@
 import os, requests
+from todo_app.data.Item import Item
 
 myAPIKey = os.getenv('TRELLO_API_KEY')
 myToken = os.getenv('TRELLO_TOKEN')
 boardID = os.getenv('TRELLO_BOARD_ID')
+
+#Implement get_trello_lists function
 
 def get_cards():
     """
@@ -14,27 +17,13 @@ def get_cards():
     trello_params = {'key': {myAPIKey}, 'token': {myToken}, 'cards': 'open', 'card_fields': 'name'}
     trello_lists = requests.get(f'https://api.trello.com/1/boards/{boardID}/lists', params=trello_params).json()
 
-    cards = []
-    for trello_list in trello_lists:
-        card_status = trello_list.get("name")
-        for card in trello_list['cards']:
-            card["status"] = card_status
-            cards.append(card)
-    return cards
+    items = []
+    for list in trello_lists:
+        for card in list['cards']:
+            item = Item.from_trello_card(card, list)
+            items.append(item)
 
-def get_card(id):
-    """
-    Fetches the saved card with the specified ID from Trello.
-
-    Args:
-        id: The ID of the card.
-
-    Returns:
-        card: The saved card, or None if no cards match the specified ID.
-    """
-    cards = get_cards()
-    return next((card for card in cards if card['id'] == id), None)
-
+    return items
 
 def add_card(title):
     """
@@ -55,7 +44,7 @@ def add_card(title):
             trello_card_data = {'key': {myAPIKey}, 'token': {myToken}, 'name': {title}, 'idList': {to_do_list_id}}
             new_card = requests.post(f'https://api.trello.com/1/cards', data=trello_card_data).json()
 
-    return get_card(new_card["id"])
+    return new_card
 
 def update_as_done(card):
     """
