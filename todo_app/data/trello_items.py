@@ -1,12 +1,6 @@
-import os, requests
+import requests
 from todo_app.data.Item import Item
-
-myAPIKey = os.getenv('TRELLO_API_KEY')
-myToken = os.getenv('TRELLO_TOKEN')
-boardID = os.getenv('TRELLO_BOARD_ID')
-
-#Implement get_trello_lists function
-#Add error handling from trello API
+from todo_app.data.trello_static_data import myAPIKey, myToken, toDoListID, doneListID, get_trello_lists
 
 def get_items():
     """
@@ -15,8 +9,7 @@ def get_items():
     Returns:
         list: The list of saved items.
     """
-    payload = {'key': {myAPIKey}, 'token': {myToken}, 'cards': 'open', 'card_fields': 'name'}
-    trello_lists = requests.get(f'https://api.trello.com/1/boards/{boardID}/lists', params=payload).json()
+    trello_lists = get_trello_lists()
 
     items = []
     for list in trello_lists:
@@ -36,14 +29,8 @@ def add_item(title):
     Returns:
         item: The saved item.
     """
-    payload_1 = {'key': {myAPIKey}, 'token': {myToken}, 'cards': 'open', 'card_fields': 'name'}
-    trello_lists = requests.get(f'https://api.trello.com/1/boards/{boardID}/lists', params=payload_1).json()
-    for list in trello_lists:
-        list_name = list.get("name")
-        if list_name == 'To Do':
-            to_do_list_id = list.get("id")
-            payload_2 = {'key': {myAPIKey}, 'token': {myToken}, 'name': {title}, 'idList': {to_do_list_id}}
-            new_item = requests.post(f'https://api.trello.com/1/cards', data=payload_2).json()
+    payload = {'key': {myAPIKey}, 'token': {myToken}, 'name': {title}, 'idList': {toDoListID}}
+    new_item = requests.post(f'https://api.trello.com/1/cards', data=payload).json()
 
     return new_item
 
@@ -54,14 +41,8 @@ def update_as_done(card_id):
     Args:
         card: The card to update to Done.
     """
-    payload_1 = {'key': {myAPIKey}, 'token': {myToken}, 'cards': 'open', 'card_fields': 'name'}
-    trello_lists = requests.get(f'https://api.trello.com/1/boards/{boardID}/lists', params=payload_1).json()
-    for list in trello_lists:
-        list_name = list.get("name")
-        if list_name == 'Done':
-            done_list_id = list.get("id")
-            payload_2 = {'key': {myAPIKey}, 'token': {myToken}, 'idList': {done_list_id}}
-            done_item = requests.put(f'https://api.trello.com/1/cards/{card_id}', data=payload_2).json()
+    payload = {'key': {myAPIKey}, 'token': {myToken}, 'idList': {doneListID}}
+    done_item = requests.put(f'https://api.trello.com/1/cards/{card_id}', data=payload).json()
 
     return done_item
 

@@ -10,8 +10,8 @@ trello_lists = requests.get(f'https://api.trello.com/1/boards/{boardID}/lists', 
 to_do_list_exists = False
 done_list_exists = False
 
-for trello_list in trello_lists:
-    list_name = trello_list.get("name")
+for list in trello_lists:
+    list_name = list.get("name")
     if list_name == "To Do":
         to_do_list_exists = True
     elif list_name == "Done":
