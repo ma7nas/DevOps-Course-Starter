@@ -4,7 +4,7 @@ from todo_app.data.trello_static_data import myAPIKey, myToken, toDoListID, done
 
 def get_items():
     """
-    Fetches all saved cards from Trello and creates a list of Items.
+    Fetches all saved cards from Trello and instantiates an Item for each one.
 
     Returns:
         list: The list of saved items.
@@ -46,7 +46,7 @@ def update_as_done(card_id):
 
     return done_item
 
-def delete_card(card_id):
+def delete_item(card_id):
     """
     Deletes an existing card in Trello. If no existing card matches the ID of the specified card, nothing is deleted.
 

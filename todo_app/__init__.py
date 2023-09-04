@@ -19,8 +19,8 @@ for list in trello_lists:
 
 if not done_list_exists:
     payload = {'key': {myAPIKey}, 'token': {myToken}, 'name': "Done", 'idBoard': {boardID}}
-    new_list = requests.post(f'https://api.trello.com/1/lists', data=payload).json()
+    create_done_list = requests.post(f'https://api.trello.com/1/lists', data=payload).json()
 
 if not to_do_list_exists:
     payload = {'key': {myAPIKey}, 'token': {myToken}, 'name': "To Do", 'idBoard': {boardID}}
-    new_list = requests.post(f'https://api.trello.com/1/lists', data=payload).json()
+    create_to_do_list = requests.post(f'https://api.trello.com/1/lists', data=payload).json()

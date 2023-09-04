@@ -1,11 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for
-from todo_app.data.trello_items import get_items, add_item, update_as_done, delete_card
+from todo_app.data.trello_items import get_items, add_item, update_as_done, delete_item
 
 from todo_app.flask_config import Config
 
 app = Flask(__name__)
 app.config.from_object(Config())
-
 
 @app.route('/')
 def index():
@@ -29,5 +28,5 @@ def done():
 def delete():
     deleted_items = request.form.getlist('action')
     for card_id in deleted_items:
-        delete_card(card_id)
+        delete_item(card_id)
     return redirect(url_for('index'))
