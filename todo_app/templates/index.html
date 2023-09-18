@@ -12,11 +12,11 @@
             {% for item in items %}
               {% if item.status == 'Done' %}
                 <input type="checkbox" id="action" name="action" value={{item.id}} class="form-check-input">
-                <label for="action" style="color:grey" class="form-check-label">{{item.title}}</label> 
+                <label for="action" style="color:grey" class="form-check-label">{{item.name}}</label> 
                 <span class="badge bg-primary rounded-pill">DONE</span><br>
               {% else %}
                 <input type="checkbox" id="action" name="action" value={{item.id}} class="form-check-input">
-                <label for="action" style="color:black" class="form-check-label"> {{item.title}}</label><br>
+                <label for="action" style="color:black" class="form-check-label">{{item.name}}</label><br>
               {% endif %}
             {% endfor %}
             <br>

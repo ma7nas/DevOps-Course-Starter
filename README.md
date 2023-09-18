@@ -34,6 +34,30 @@ $ cp .env.template .env  # (first time only)
 
 The `.env` file is used by flask to set environment variables when running `flask run`. This enables things like development mode (which also enables features like hot reloading when you make a file change). There's also a [SECRET_KEY](https://flask.palletsprojects.com/en/1.1.x/config/#SECRET_KEY) variable which is used to encrypt the flask session cookie.
 
+This project uses the Trello REST API, so you will need to create a free Trello account, your Trello workspace and a board that the application can use to store your To Do items. The steps to get the Board ID are below.
+1. Create a free Trello account via the sign up link: https://trello.com/signup
+2. Create a Trello workspace via the appropriate link.
+3. Create a new board via the appropriate link.
+4. Immediately after the board has been created, add ".json" to the end of the URL in your browser address bar.
+5. Copy the first "id" field which is your `board_id`.
+NOTE: Trello should automatically create To Do and Done lists on the new board, however if this is not the case, the application will create these for you when it starts.
+
+The Trello API also requires an API Key (`api_key`) and a Token (`token`) for authorisation.
+
+Trello API Key and Token creation: 
+1. Create a new custom Power-Up and link it to your workspace: https://developer.atlassian.com/cloud/trello/guides/power-ups/managing-power-ups/#adding-a-new-custom-power-up
+2. Generate the API Key: https://developer.atlassian.com/cloud/trello/guides/power-ups/managing-power-ups/#generating-an-api-key
+3. Generate the Token by visiting the Power-Ups Admin screen, selecting your Power-Up, clicking API Key and then the Token link.
+
+Lastly, these three parameters need to added into the  `.env` file that you have cloned previously in the fields below.
+
+# Trello token and API key for utilising Trello REST API
+TRELLO_API_KEY=`api_key`
+TRELLO_TOKEN=`token`
+
+# Trello board id
+TRELLO_BOARD_ID=`board_id`
+
 ## Running the App
 
 Once the all dependencies have been installed, start the Flask app in development mode within the Poetry environment by running:
