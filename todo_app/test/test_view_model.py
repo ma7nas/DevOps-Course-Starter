@@ -19,3 +19,22 @@ def test_view_model_filter_done_items():
     assert len(done_item_list) == 2
     assert done_item_list[0].status == 'Done'
     assert done_item_list[1].status == 'Done'
+
+def test_view_model_filter_to_do_items():
+    # Arrange
+    items = [
+        Item('1', 'Make breakfast', 'Done'),
+        Item('2', 'Make lunch', 'To Do'),
+        Item('3', 'Make dinner', 'To Do'),
+        Item('4', 'Make tea', 'Done')
+    ]
+
+    view_model = ViewModel(items)
+    
+    # Act
+    done_item_list = view_model.to_do_items
+
+    # Assert
+    assert len(done_item_list) == 2
+    assert done_item_list[0].status == 'To Do'
+    assert done_item_list[1].status == 'To Do'
