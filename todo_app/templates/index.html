@@ -9,7 +9,7 @@
 
   <h2>My Tasks</h2>
     <form method="POST">
-            {% for item in items %}
+            {% for item in view_model.items %}
               {% if item.status == 'Done' %}
                 <input type="checkbox" id="action" name="action" value={{item.id}} class="form-check-input">
                 <label for="action" style="color:grey" class="form-check-label">{{item.name}}</label> 
