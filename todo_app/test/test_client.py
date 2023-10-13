@@ -1,8 +1,9 @@
-from dotenv import load_dotenv, find_dotenv
-from todo_app import app
 import pytest
 import requests
 import os
+from dotenv import load_dotenv, find_dotenv
+from todo_app import app
+
 
 @pytest.fixture
 def client():
@@ -34,6 +35,11 @@ def stub(url, params={}):
             'cards': [{'id': '123', 'name': 'Test card 1'},{'id': '456', 'name': 'Test card 2'}]
         }]
         return StubResponse(fake_response_data)
+    elif url.startswith('https://api.trello.com/1/cards'):
+        fake_response_data = [{
+            'id': '1223def'
+        }]
+        return StubResponse(fake_response_data)
 
     raise Exception(f'Integration test did not expect URL "{url}"')
 
@@ -47,3 +53,16 @@ def test_index_page(monkeypatch, client):
     assert response.status_code == 200
     assert '123' in response.data.decode()
     assert 'Test card 2' in response.data.decode()
+
+def test_add_end_point(monkeypatch, client):
+    # Replace requests.post(url) with our own function
+    monkeypatch.setattr(requests, 'post', stub)
+
+    # Make a request to add a to do item
+    to_do_list_id = os.environ.get('TRELLO_TODO_LIST_ID')
+    payload = {'name': 'Test add item', 'idList': to_do_list_id}
+    
+    response = client.post('/add', data=payload)
+
+    assert response.status_code == 302
+    #assert 'Test add item' in response.data.decode()

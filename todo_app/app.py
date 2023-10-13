@@ -16,8 +16,8 @@ def create_app():
 
     @app.route('/add', methods=['GET', 'POST'])
     def add():
-        title = request.form.get('title')
-        add_item(title)
+        name = request.form.get('name')
+        new_item = add_item(name)
         return redirect(url_for('index'))
 
     @app.route('/done', methods=['GET', 'POST'])
