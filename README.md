@@ -80,3 +80,25 @@ Now visit [`http://localhost:5000/`](http://localhost:5000/) in your web browser
 You can add a new to-do item by entering the task in the text box and clicking the Add button.
 You can mark an item as Done by selecting the relevant checkbox and clicking the Done button. You can select multiple items at once. Completed items will move to the bottom of the task list.
 You can delete an item from the list completely by selecting the relevant checkbox and clicking the Delete button. You can select multiple items at once.
+
+## Running the Tests
+In order to run the tests you will need to make sure that Pytest is installed by running the below once all the above steps have been followed.
+```bash
+$ poetry add pytest
+```
+Pytest will pickup tests in files with a name of the form `test_*.py` or `*_test.py`. The tests can be found in the `./todo_app/test` folder.
+
+To run all the tests you can execute the below on the Terminal in VSCode.
+```bash
+$ poetry run pytest
+```
+Alternatively you can run all the tests or run them individually from the command line by opening a prompt from the project folder and using:
+```bash
+$ poetry run pytest ./todo_app/test/test_view_model.py
+$ poetry run pytest ./todo_app/test/test_client.py
+$ poetry run pytest ./todo_app/test
+```
+
+
+
+

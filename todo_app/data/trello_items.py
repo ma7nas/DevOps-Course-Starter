@@ -30,7 +30,7 @@ def get_items():
 
     return items
 
-def add_item(title):
+def add_item(name):
     """
     Adds a new item by creating a new card with the specified title in Trello.
 
@@ -40,8 +40,8 @@ def add_item(title):
     Returns:
         item: The saved item.
     """
-    payload = {'key': {myAPIKey()}, 'token': {myToken()}, 'name': {title}, 'idList': {myToDoListID()}}
-    new_item = requests.post(f'https://api.trello.com/1/cards', data=payload).json()
+    payload = {'key': {myAPIKey()}, 'token': {myToken()}, 'name': {name}, 'idList': {myToDoListID()}}
+    new_item = requests.post(f'https://api.trello.com/1/cards', params=payload).json()
 
     return new_item
 
@@ -53,7 +53,7 @@ def update_as_done(card_id):
         card: The card to update to Done.
     """
     payload = {'key': {myAPIKey()}, 'token': {myToken()}, 'idList': {myDoneListID()}}
-    done_item = requests.put(f'https://api.trello.com/1/cards/{card_id}', data=payload).json()
+    done_item = requests.put(f'https://api.trello.com/1/cards/{card_id}', params=payload).json()
 
     return done_item
 
@@ -65,6 +65,6 @@ def delete_item(card_id):
         card: The card to delete.
     """
     payload = {'key': {myAPIKey()}, 'token': {myToken()}}
-    deleted_item = requests.delete(f'https://api.trello.com/1/cards/{card_id}', data=payload).json()
+    deleted_item = requests.delete(f'https://api.trello.com/1/cards/{card_id}',params=payload).json()
 
     return deleted_item
