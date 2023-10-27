@@ -25,8 +25,10 @@ class StubResponse():
     def json(self):
         return self.fake_response_data
 
+created_items = []
 def stub(url, params={}):
     test_board_id = os.environ.get('TRELLO_BOARD_ID')
+    global created_items
 
     if url == f'https://api.trello.com/1/boards/{test_board_id}/lists':
         fake_response_data = [{
@@ -34,11 +36,13 @@ def stub(url, params={}):
             'name': 'To Do',
             'cards': [{'id': '123', 'name': 'Test card 1'},{'id': '456', 'name': 'Test card 2'}]
         }]
+        fake_response_data[0]['cards'].extend(created_items)
         return StubResponse(fake_response_data)
     elif url.startswith('https://api.trello.com/1/cards'):
         fake_response_data = [{
             'id': '1223def'
         }]
+        created_items.append({'id': '1223def', 'name': 'Test add item'})
         return StubResponse(fake_response_data)
 
     raise Exception(f'Integration test did not expect URL "{url}"')
@@ -50,6 +54,7 @@ def test_index_page(monkeypatch, client):
     # Make a request to our app's index page
     response = client.get('/')
 
+    # Check the response code and the data in the response
     assert response.status_code == 200
     assert '123' in response.data.decode()
     assert 'Test card 2' in response.data.decode()
@@ -62,7 +67,15 @@ def test_add_end_point(monkeypatch, client):
     to_do_list_id = os.environ.get('TRELLO_TODO_LIST_ID')
     payload = {'name': 'Test add item', 'idList': to_do_list_id}
     
-    response = client.post('/add', data=payload)
+    post_response = client.post('/add', data=payload)
 
-    assert response.status_code == 302
-    #assert 'Test add item' in response.data.decode()
+    # Replace requests.get(url) with our own function
+    monkeypatch.setattr(requests, 'get', stub)
+
+    # Perform the redirect here ourselves using monkeypatch data
+    get_response = client.get('/')
+
+    # Check the post response performs a redirect (302), the get response code (200) and the newly added data
+    assert post_response.status_code == 302
+    assert get_response.status_code == 200
+    assert 'Test add item' in get_response.data.decode()
