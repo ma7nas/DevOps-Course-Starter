@@ -26,14 +26,12 @@
     - name: Install Poetry
       ansible.builtin.shell: 
         cmd: curl -sSL https://install.python-poetry.org | python3
-    - name: Create the application home directory
+        creates: /home/ec2-user/.local/bin/poetry
+    - name: Create the application home directory and change ownership
       become: yes
       ansible.builtin.command:
-        cmd: mkdir -p /opt/todoapp
-    - name: Change ownership of the application home directory
-      become: yes
-      ansible.builtin.command:
-        cmd: chown ec2-user /opt/todoapp
+        cmd: mkdir -p /opt/todoapp && chown ec2-user /opt/todoapp
+        creates: /opt/todoapp
     - name: Clone repo of todo application from git
       become: yes
       ansible.builtin.git:
