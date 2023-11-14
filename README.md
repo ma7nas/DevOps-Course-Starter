@@ -58,7 +58,7 @@ TRELLO_TOKEN=`token`
 # Trello board id
 TRELLO_BOARD_ID=`board_id`
 
-## Running the App
+## Running the App Locally
 
 Once the all dependencies have been installed, start the Flask app in development mode within the Poetry environment by running:
 ```bash
@@ -81,7 +81,16 @@ You can add a new to-do item by entering the task in the text box and clicking t
 You can mark an item as Done by selecting the relevant checkbox and clicking the Done button. You can select multiple items at once. Completed items will move to the bottom of the task list.
 You can delete an item from the list completely by selecting the relevant checkbox and clicking the Delete button. You can select multiple items at once.
 
+## Running the App On A Remote VM
+
+Ensure that you have the `.env.j2`, `inventory.ini`, `playbook.yml` and `todoapp.service` files on the VM that you are going to use as your Ansible control node. You should make sure you are able to SSH from the control node to the target machine where you want to run the application. Issue the following command from your home directory on the control node:
+```bash
+$  ansible-playbook playbook.yml -i inventory.ini
+```
+This will install the application on the target VM and start the application service. You should then be able to access the application by navigating to http://*your_target_vm_ip*:5000
+
 ## Running the Tests
+
 In order to run the tests you will need to make sure that Pytest is installed by running the below once all the above steps have been followed.
 ```bash
 $ poetry add pytest
