@@ -29,9 +29,10 @@
         creates: /home/ec2-user/.local/bin/poetry
     - name: Create the application home directory and change ownership
       become: yes
-      ansible.builtin.command:
-        cmd: mkdir -p /opt/todoapp && chown ec2-user /opt/todoapp
-        creates: /opt/todoapp
+      ansible.builtin.file:
+        path: /opt/todoapp
+        state: directory
+        owner: ec2-user 
     - name: Clone repo of todo application from git
       become: yes
       ansible.builtin.git:
