@@ -1,0 +1,8 @@
+**/.env
+**/.env.j2
+**/__pycache__
+**/playbook.yml
+**/inventory.ini
+**/build.log
+**/todoapp.service
+**/Dockerfile
