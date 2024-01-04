@@ -107,6 +107,7 @@ Once the images are successfully built, you can run the development and producti
 ```bash
 $  docker run --env-file ./.env -p 5000:5000 --mount "type=bind,source=$(pwd)/todo_app,target=/opt/todoapp/todo_app" todo-app:dev
 ```
+[NOTE: For running the development environment you can also use the docker-compose.yml file, by running the `docker compose up` command.]
 
 ## Running the Production container (with gunicorn)
 ```bash
