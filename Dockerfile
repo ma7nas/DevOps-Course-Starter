@@ -10,11 +10,9 @@ RUN poetry install
 RUN poetry update
 ENV WEBAPP_PORT=8000
 EXPOSE ${WEBAPP_PORT}
-CMD ["poetry", "run", "gunicorn", "--bind", "0.0.0.0", "todo_app.app:create_app()"]
-
 
 FROM base as development
-
-
+CMD ["poetry", "run", "flask", "run", "--host", "0.0.0.0"]
 
 FROM base as production
+CMD ["poetry", "run", "gunicorn", "--bind", "0.0.0.0", "todo_app.app:create_app()"]
