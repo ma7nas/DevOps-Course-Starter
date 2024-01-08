@@ -8,12 +8,15 @@ COPY pyproject.toml poetry.lock ./
 RUN poetry install --no-root
 COPY . /opt/todoapp/
 WORKDIR /opt/todoapp
-ENV WEBAPP_PORT=8000
-EXPOSE ${WEBAPP_PORT}
 RUN poetry install --without dev
 
 FROM base as development
+ENV WEBAPP_PORT=5000
+EXPOSE ${WEBAPP_PORT}
+RUN poetry install
 CMD ["poetry", "run", "flask", "run", "--host", "0.0.0.0"]
 
 FROM base as production
+ENV WEBAPP_PORT=8000
+EXPOSE ${WEBAPP_PORT}
 CMD ["poetry", "run", "gunicorn", "--bind", "0.0.0.0", "todo_app.app:create_app()"]

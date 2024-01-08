@@ -97,8 +97,8 @@ Once you have the Docker Engine running you can build the development and produc
 
 ## Building the Docker image per environment
 ```bash
-$  docker build --target development --tag todo-app:dev
-$  docker build --target production --tag todo-app:prod
+$  docker build --target development --tag todo-app:dev .
+$  docker build --target production --tag todo-app:prod .
 ```
 
 Once the images are successfully built, you can run the development and production containers using the following commands.
@@ -107,7 +107,7 @@ Once the images are successfully built, you can run the development and producti
 ```bash
 $  docker run --env-file ./.env -p 5000:5000 --mount "type=bind,source=$(pwd)/todo_app,target=/opt/todoapp/todo_app" todo-app:dev
 ```
-[NOTE: For running the development environment you can also use the docker-compose.yml file, by running the `docker compose up` command.]
+[NOTE: For running the development environment you can also use the docker-compose.yml file, by running the `docker compose up --build` command.]
 
 ## Running the Production container (with gunicorn)
 ```bash
