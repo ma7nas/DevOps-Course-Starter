@@ -89,6 +89,31 @@ $  ansible-playbook playbook.yml -i inventory.ini
 ```
 This will install the application on the target VM and start the application service. You should then be able to access the application by navigating to http://*your_target_vm_ip*:5000
 
+## Running the App in a container using Docker
+
+It is a prerequisite to have a Docker Engine running before attempting to build the environments. You can do this by installing Docker Desktop (licenses are free for educational use even in a professional environment): https://docs.docker.com/get-docker/
+
+Once you have the Docker Engine running you can build the development and production images using the following commands.
+
+## Building the Docker image per environment
+```bash
+$  docker build --target development --tag todo-app:dev .
+$  docker build --target production --tag todo-app:prod .
+```
+
+Once the images are successfully built, you can run the development and production containers using the following commands.
+
+## Running the Development container (with flask and hot reload)
+```bash
+$  docker run --env-file ./.env -p 5000:5000 --mount "type=bind,source=$(pwd)/todo_app,target=/opt/todoapp/todo_app" todo-app:dev
+```
+[NOTE: For running the development environment you can also use the docker-compose.yml file, by running the `docker compose up --build` command.]
+
+## Running the Production container (with gunicorn)
+```bash
+$  docker run --env-file ./.env --publish 5000:8000 todo-app:prod
+```
+
 ## Running the Tests
 
 In order to run the tests you will need to make sure that Pytest is installed by running the below once all the above steps have been followed.
