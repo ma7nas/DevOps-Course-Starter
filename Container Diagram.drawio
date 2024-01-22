@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-22T11:25:12.059Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="VvFaxywUBbsM88Sj8krr" version="22.1.21" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-22T11:26:04.126Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="Xr-QK9m5s3j3s-xx7h1D" version="22.1.21" type="github">
   <diagram name="Page-1" id="hzxyXguT6aONyPur9d6D">
     <mxGraphModel dx="1434" dy="746" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -48,7 +48,7 @@
         </mxCell>
         <mxCell id="gGQ2gIt7nyH7d9AVS0pc-12" value="9" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="gGQ2gIt7nyH7d9AVS0pc-11">
           <mxGeometry x="-1" relative="1" as="geometry">
-            <mxPoint x="-70" y="-110" as="offset" />
+            <mxPoint x="-10" y="-5" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="gGQ2gIt7nyH7d9AVS0pc-13" value="Read or write&lt;br&gt;To Do items" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;" edge="1" parent="1">
@@ -69,7 +69,7 @@
         </mxCell>
         <mxCell id="gGQ2gIt7nyH7d9AVS0pc-16" value="6" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="gGQ2gIt7nyH7d9AVS0pc-15">
           <mxGeometry x="-1" relative="1" as="geometry">
-            <mxPoint x="-70" y="1" as="offset" />
+            <mxPoint x="-10" y="1" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="gGQ2gIt7nyH7d9AVS0pc-17" value="HTML Templates" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
@@ -112,7 +112,7 @@
         </mxCell>
         <mxCell id="gGQ2gIt7nyH7d9AVS0pc-30" value="7" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="gGQ2gIt7nyH7d9AVS0pc-29">
           <mxGeometry x="-1" relative="1" as="geometry">
-            <mxPoint x="-50" y="1" as="offset" />
+            <mxPoint x="-10" y="1" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="gGQ2gIt7nyH7d9AVS0pc-33" value="Web page routing" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;" edge="1" parent="1">
@@ -124,7 +124,7 @@
         </mxCell>
         <mxCell id="gGQ2gIt7nyH7d9AVS0pc-34" value="8" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="gGQ2gIt7nyH7d9AVS0pc-33">
           <mxGeometry x="-1" relative="1" as="geometry">
-            <mxPoint x="-14" y="30" as="offset" />
+            <mxPoint x="-14" y="10" as="offset" />
           </mxGeometry>
         </mxCell>
       </root>
