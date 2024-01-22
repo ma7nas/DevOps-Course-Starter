@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-22T16:43:38.262Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="OH8HEFSviOjUeHVG8k1k" version="22.1.21" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-22T17:06:24.326Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="0omCTusyBBvti2wMMASb" version="22.1.21" type="github">
   <diagram name="Page-1" id="5wk_Syi67mKXL78GF8bt">
     <mxGraphModel dx="1434" dy="746" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -109,7 +109,7 @@
         <mxCell id="ltyIU091W-dR_cXolWgd-26" value="&lt;br&gt;Page Routes&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Index&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Add&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Done&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Delete&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;" parent="1" vertex="1">
           <mxGeometry x="450" y="200" width="100" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="NWpGX2xRMUUI2gVWj4OY-1" value="index.html&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;layout.html" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="NWpGX2xRMUUI2gVWj4OY-1" value="index.html&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;layout.html" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="460" y="380" width="80" height="60" as="geometry" />
         </mxCell>
       </root>
