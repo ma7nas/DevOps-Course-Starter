@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-22T16:35:13.996Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="Fr2l7T3gFVaRQv7YWRUo" version="22.1.21" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-22T16:43:38.262Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="OH8HEFSviOjUeHVG8k1k" version="22.1.21" type="github">
   <diagram name="Page-1" id="5wk_Syi67mKXL78GF8bt">
     <mxGraphModel dx="1434" dy="746" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -9,61 +9,61 @@
         </mxCell>
         <mxCell id="ltyIU091W-dR_cXolWgd-2" value="Make request" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;" parent="1" edge="1">
           <mxGeometry x="-1" y="10" relative="1" as="geometry">
-            <mxPoint x="80" y="280.5" as="sourcePoint" />
-            <mxPoint x="140" y="280" as="targetPoint" />
+            <mxPoint x="80" y="210.5" as="sourcePoint" />
+            <mxPoint x="140" y="210" as="targetPoint" />
             <mxPoint x="-10" y="9" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ltyIU091W-dR_cXolWgd-3" value="&lt;b&gt;Trello&lt;/b&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
-          <mxGeometry x="1010" y="245" width="80" height="100" as="geometry" />
+        <mxCell id="ltyIU091W-dR_cXolWgd-3" value="&lt;b&gt;Trello&lt;/b&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#cdeb8b;strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="1010" y="195" width="80" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="ltyIU091W-dR_cXolWgd-4" value="&lt;b&gt;Web Browser (HTML)&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="150" y="270" width="100" height="75" as="geometry" />
+        <mxCell id="ltyIU091W-dR_cXolWgd-4" value="&lt;b&gt;Web Browser (HTML)&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;" parent="1" vertex="1">
+          <mxGeometry x="150" y="200" width="100" height="75" as="geometry" />
         </mxCell>
         <mxCell id="ltyIU091W-dR_cXolWgd-5" value="GET or POST" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;" parent="1" edge="1">
           <mxGeometry x="-1" relative="1" as="geometry">
-            <mxPoint x="260" y="280" as="sourcePoint" />
-            <mxPoint x="340" y="280" as="targetPoint" />
+            <mxPoint x="260" y="210" as="sourcePoint" />
+            <mxPoint x="340" y="210" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="ltyIU091W-dR_cXolWgd-6" value="Generated HTML" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;" parent="1" edge="1">
-          <mxGeometry x="1" y="20" relative="1" as="geometry">
+          <mxGeometry x="0.1064" y="40" relative="1" as="geometry">
             <mxPoint x="340" y="420" as="sourcePoint" />
-            <mxPoint x="260" y="335" as="targetPoint" />
+            <mxPoint x="260" y="265" as="targetPoint" />
             <Array as="points">
               <mxPoint x="340" y="420" />
               <mxPoint x="300" y="420" />
-              <mxPoint x="300" y="335" />
+              <mxPoint x="300" y="265" />
             </Array>
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="ltyIU091W-dR_cXolWgd-7" value="Read or write&lt;br&gt;To Do items" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;" parent="1" edge="1">
           <mxGeometry x="-1" relative="1" as="geometry">
-            <mxPoint x="920" y="258" as="sourcePoint" />
-            <mxPoint x="1000" y="258" as="targetPoint" />
+            <mxPoint x="920" y="208" as="sourcePoint" />
+            <mxPoint x="1000" y="208" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="ltyIU091W-dR_cXolWgd-8" value="Data response" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;" parent="1" edge="1">
           <mxGeometry x="1" relative="1" as="geometry">
-            <mxPoint x="1000" y="320" as="sourcePoint" />
-            <mxPoint x="920" y="320" as="targetPoint" />
+            <mxPoint x="1000" y="270" as="sourcePoint" />
+            <mxPoint x="920" y="270" as="targetPoint" />
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ltyIU091W-dR_cXolWgd-9" value="&lt;b&gt;HTML Templates&lt;br&gt;&lt;/b&gt;&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" parent="1" vertex="1">
+        <mxCell id="ltyIU091W-dR_cXolWgd-9" value="&lt;b&gt;HTML Templates&lt;br&gt;&lt;/b&gt;&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="440" y="350" width="120" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="ltyIU091W-dR_cXolWgd-10" value="&lt;b&gt;Trello Data Manager&lt;br&gt;&lt;/b&gt;(JSON/HTTPS)" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" parent="1" vertex="1">
+        <mxCell id="ltyIU091W-dR_cXolWgd-10" value="&lt;b&gt;Trello Data Manager&lt;br&gt;&lt;/b&gt;(JSON/HTTPS)" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="650" y="150" width="250" height="260" as="geometry" />
         </mxCell>
-        <mxCell id="ltyIU091W-dR_cXolWgd-11" value="&lt;b&gt;App.py&lt;br&gt;&lt;/b&gt;(Python)" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;labelBackgroundColor=default;" parent="1" vertex="1">
+        <mxCell id="ltyIU091W-dR_cXolWgd-11" value="&lt;div style=&quot;&quot;&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;App.py&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;(Python)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;labelBackgroundColor=none;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;fillStyle=auto;" parent="1" vertex="1">
           <mxGeometry x="440" y="150" width="120" height="150" as="geometry" />
         </mxCell>
         <mxCell id="ltyIU091W-dR_cXolWgd-12" value="Serve page" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;" parent="1" edge="1">
           <mxGeometry x="1" relative="1" as="geometry">
-            <mxPoint x="140" y="340" as="sourcePoint" />
-            <mxPoint x="80" y="340" as="targetPoint" />
+            <mxPoint x="140" y="270" as="sourcePoint" />
+            <mxPoint x="80" y="270" as="targetPoint" />
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
@@ -88,14 +88,14 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ltyIU091W-dR_cXolWgd-16" value="&lt;b&gt;Web Server&lt;br&gt;&lt;/b&gt;(Gunicorn)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="ltyIU091W-dR_cXolWgd-16" value="&lt;b&gt;Web Server&lt;br&gt;&lt;/b&gt;(Gunicorn)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
           <mxGeometry x="370" y="150" width="60" height="300" as="geometry" />
         </mxCell>
         <mxCell id="ltyIU091W-dR_cXolWgd-17" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;To Do App&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;(Docker container)&lt;/span&gt;&lt;br&gt;&lt;/font&gt;" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;" parent="1" vertex="1">
           <mxGeometry x="745" y="425" width="105" height="30" as="geometry" />
         </mxCell>
         <mxCell id="ltyIU091W-dR_cXolWgd-18" value="User" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.user;" parent="1" vertex="1">
-          <mxGeometry x="10" y="270" width="60" height="60" as="geometry" />
+          <mxGeometry x="10" y="200" width="60" height="60" as="geometry" />
         </mxCell>
         <mxCell id="ltyIU091W-dR_cXolWgd-19" value="Trello Item&lt;br&gt;(Item class)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="660" y="200" width="80" height="90" as="geometry" />
