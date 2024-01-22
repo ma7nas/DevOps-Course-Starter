@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-22T09:58:06.685Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="RafWRlttUV3NFNKJMqGQ" version="22.1.21" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-22T16:51:14.158Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="Ku4J14AfDn-BZHHlUC8t" version="22.1.21" type="github">
   <diagram name="Page-1" id="df1fDY7C39LOkRKU9__Z">
     <mxGraphModel dx="1434" dy="746" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -19,9 +19,6 @@
             </mxGeometry>
           </mxCell>
         </object>
-        <mxCell id="nWHsgZnryIvwV-E4HBbC-4" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" parent="nWHsgZnryIvwV-E4HBbC-3" connectable="0" vertex="1">
-          <mxGeometry x="-1" relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="nWHsgZnryIvwV-E4HBbC-6" value="Trello" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
           <mxGeometry x="680" y="280" width="60" height="80" as="geometry" />
         </mxCell>
@@ -35,9 +32,6 @@
             </Array>
             <mxPoint as="offset" />
           </mxGeometry>
-        </mxCell>
-        <mxCell id="nWHsgZnryIvwV-E4HBbC-8" value="2" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" parent="nWHsgZnryIvwV-E4HBbC-7" connectable="0" vertex="1">
-          <mxGeometry x="-1" relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
